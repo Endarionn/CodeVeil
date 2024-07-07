@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Obfuscator</title>
+    <style>
+        body {
+            background-color: #1e1e1e; 
+            color: #c5c6c7; 
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 80%;
+            max-width: 1200px;
+            background-color: #282a36; 
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+        }
+        .textBoxContainer {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            margin-top: 20px; 
+        }
+        .textBoxContainer .richTextBox {
+            width: 48%; 
+            height: 300px;
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #282a36;
+            border: 1px solid #44475a;
+            color: #f8f8f2; 
+            resize: none;
+            box-sizing: border-box;
+        }
+        .buttons {
+            margin-top: 20px; 
+        }
+        button {
+            background-color: #50fa7b; 
+            color: #282a36; 
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #3be362;
+        }
+        label {
+            font-size: 1.2em;
+            margin-bottom: 10px; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="textBoxContainer">
+            <textarea id="inputCode" class="richTextBox"></textarea>
+            <textarea id="outputCode" class="richTextBox"></textarea>
+        </div>
+        <div class="buttons">
+            <button onclick="obfuscateCode()">Obfuscate</button>
+        </div>
+    </div>
+
+    <script>
+        function obfuscateCode() {
+            let inputCode = document.getElementById('inputCode').value;
+            let xhr = new XMLHttpRequest();
+            xhr.open('POST', 'obfuscate.php', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.onload = function() {
+                if (this.status === 200) {
+                    document.getElementById('outputCode').value = this.responseText;
+                }
+            };
+            xhr.send('code=' + encodeURIComponent(inputCode));
+        }
+    </script>
+</body>
+</html>
