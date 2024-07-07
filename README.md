@@ -1,47 +1,25 @@
-👨‍💻 Welcome to CodeVeil!
+CodeVeil is a PHP tool that obfuscates user-provided C# code by renaming variables and functions with random names, encrypting string and char values with Base64, and decoding them at runtime. This tool enhances the security of your code while reducing readability to make it harder to understand.
 
 ---
 
-🌟 What is CodeVeil?
-CodeVeil is a powerful PHP tool designed to obfuscate your C# code by renaming variables and functions, encrypting string and char values using Base64, and decoding them dynamically at runtime. This tool enhances your code's security while making it more challenging to reverse-engineer.
+Features
+Variable and Function Obfuscation: Renames variables and function names throughout the code with random names.
+String and Char Encryption: Encrypts values inside double quotes and single quotes using Base64.
+Runtime Decode: Decodes encrypted string and char values from Base64 at runtime.
 
 ---
 
-🚀 Features
-Variable and Function Obfuscation: Randomly renames variables and function names to obscure their purpose.
-String and Char Encryption: Encrypts values within double and single quotes using Base64.
-Runtime Decryption: Decrypts encrypted string and char values from Base64 dynamically during execution.
+Usage
+Enter Code: Input your C# code into CodeVeil.
+Obfuscate: Obfuscate the code and update with encrypted string and char values.
+Use Your Code: Use the obfuscated and encrypted code in your project.
 
 ---
 
-🔧 How to Use CodeVeil
-
-💻 Example Usage
-php
-Kodu kopyala
-<?php
-// Example of using CodeVeil to obfuscate and encrypt C# code
-$code = '
-using System;
-
-class Program
-{
-    static void Main(string[] args)
-    {
-        Console.WriteLine("Hello, World!");
-    }
-}
-';
-
-// Send the code to CodeVeil via POST request
-$response = sendPostRequest('http://your-server/obfuscate.php', ['code' => $code]);
-
-// Output the obfuscated and encrypted C# code
-echo $response;
-?>
-🌐 Connect with CodeVeil
+How It Works
+CodeVeil operates as a web application written in PHP. It takes user-provided C# code, renames variables and function names, encrypts string and char values with Base64, and finally serves this modified code to the user.
 
 ---
 
-🚀 Contributions
-CodeVeil is open-source on GitHub. Feel free to contribute by submitting pull requests to enhance the tool's functionality and fix any issues.
+Contributing
+CodeVeil is open-source on GitHub. You can contribute by submitting pull requests to improve the tool and fix bugs.
