@@ -1,4 +1,7 @@
 👨‍💻 Welcome to CodeVeil!
+
+---
+
 🌟 What is CodeVeil?
 CodeVeil is a powerful PHP tool designed to obfuscate your C# code by renaming variables and functions, encrypting string and char values using Base64, and decoding them dynamically at runtime. This tool enhances your code's security while making it more challenging to reverse-engineer.
 
