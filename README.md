@@ -15,9 +15,7 @@ Runtime Decryption: Decrypts encrypted string and char values from Base64 dynami
 ---
 
 🔧 How to Use CodeVeil
-Input Your Code: Provide your C# code to CodeVeil.
-Obfuscate: Run CodeVeil to obfuscate and encrypt your code with Base64-encoded string and char values.
-Integrate: Use the obfuscated and encrypted code in your projects for enhanced security.
+
 💻 Example Usage
 php
 Kodu kopyala
